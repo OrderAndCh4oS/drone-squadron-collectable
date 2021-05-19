@@ -1,0 +1,200 @@
+{
+  "data": {
+    "squadrons": [
+      {
+        "id": 1,
+        "name": "Squadron One",
+        "colour": "blue",
+        "drones": [
+          {
+            "id": 1,
+            "name": "Rewayn",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 2,
+            "name": "Bertev",
+            "weapon": "arc-gun",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 3,
+            "name": "Jackeith",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 4,
+            "name": "Saura",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 5,
+            "name": "Jamy",
+            "weapon": "arc-gun",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 6,
+            "name": "Kathrie",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 7,
+            "name": "Borea",
+            "weapon": "arc-gun",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 8,
+            "name": "Scarlie",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 9,
+            "name": "Juane",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 10,
+            "name": "Benjoe",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Squadron Two",
+        "colour": "red",
+        "drones": [
+          {
+            "id": 1,
+            "name": "Waerren",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 2,
+            "name": "Brandon",
+            "weapon": "arc-gun",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 3,
+            "name": "Makenna",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 4,
+            "name": "Brisea",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 5,
+            "name": "Kelyn",
+            "weapon": "arc-gun",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 6,
+            "name": "Tr2st",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 7,
+            "name": "Alixandr",
+            "weapon": "arc-gun",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 8,
+            "name": "Ta2ra",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 9,
+            "name": "Morgn",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          },
+          {
+            "id": 10,
+            "name": "Zand",
+            "weapon": "pulse-rifle",
+            "gimbal": "G90",
+            "scanner": "SC300",
+            "steering": "S8",
+            "thruster": "T12"
+          }
+        ]
+      }
+    ]
+  }
+}
