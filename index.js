@@ -76,7 +76,7 @@ async function initialise() {
 
 function setupDrones() {
     squadrons.splice(0, squadrons.length);
-    const drones = nDronesGenerator(5);
+    const drones = nDronesGenerator(6);
     const c1 = ~~(Math.random() * 6);
     let c2;
     do {
@@ -109,6 +109,8 @@ function setFrameTimeData() {
     }
 }
 
+let i = 0;
+
 function animate() {
     background.draw();
     deltaTime.update();
@@ -118,15 +120,21 @@ function animate() {
         grid.draw();
         grid.log();
         UI.displaySquadData();
-        squadrons.map(s => {
-            if(s.health <= 0) {
-                game.state = 'game-over';
-            }
-        });
+        if(squadrons[0].health <= 0 || squadrons[1].health <= 0)
+            game.state = 'game-over';
     }
     if(game.state === 'game-over') {
         new GameOver().draw();
     }
     requestAnimationFrame(animate);
     setFrameTimeData();
+    i++;
+    if(i % 200 === 0) {
+        console.log(squadrons[0].health);
+        console.log(game.state);
+    }
+    if(i % 200 === 0) {
+        console.log(squadrons[1].health);
+        console.log(game.state);
+    }
 }

@@ -2,11 +2,11 @@ import { colours, context, debug } from '../constants/constants.js';
 import Vector from '../service/vector.js';
 import Particle from './abstract/particle.js';
 import Health from '../service/health.js';
-import { drones } from '../constants/sprites.js';
-import { gimbals, scanners, steering, thrusters } from '../constants/utilities.js';
+import { chassis, gimbals, scanners, steering, thrusters } from '../constants/utilities.js';
 import { weapons } from '../constants/weapons.js';
 import DisplayData from '../user-interface/display-particle-data.js';
 
+const chassisValues = Object.values(chassis);
 const weaponValues = Object.values(weapons);
 const scannerValues = Object.values(scanners);
 const thrusterValues = Object.values(thrusters);
@@ -25,7 +25,10 @@ export default class Drone extends Particle {
         this.scanner = new scannerValues[drone.scanner]();
         this.thruster = new thrusterValues[drone.thruster]();
         this.steering = new steeringValues[drone.steering]();
-        this.health = new Health(100);
+        this.chassis = new chassisValues[drone.chassis]();
+        console.log(this.chassis)
+        console.log(this.chassis.health)
+        this.health = new Health(this.chassis.health);
         this._damage = 0;
         this._kills = 0;
         this._killed = [];

@@ -20,6 +20,19 @@ import SC600 from '../game-object/utility/scanner/SC600.js';
 import SC500 from '../game-object/utility/scanner/SC500.js';
 import SC400 from '../game-object/utility/scanner/SC400.js';
 import SC300 from '../game-object/utility/scanner/SC300.js';
+import C200 from '../game-object/utility/chassis/C200.js';
+import C175 from '../game-object/utility/chassis/C175.js';
+import C150 from '../game-object/utility/chassis/C150.js';
+import C125 from '../game-object/utility/chassis/C125.js';
+import C100 from '../game-object/utility/chassis/C100.js';
+
+export const chassis = {
+    'C100': C100,
+    'C125': C125,
+    'C150': C150,
+    'C175': C175,
+    'C200': C200,
+};
 
 export const gimbals = {
     'G60': G60,
