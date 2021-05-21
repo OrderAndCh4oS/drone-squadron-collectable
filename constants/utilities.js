@@ -9,6 +9,7 @@ import S10 from '../game-object/utility/steering/S10.js';
 import S8 from '../game-object/utility/steering/S8.js';
 import S6 from '../game-object/utility/steering/S6.js';
 import S4 from '../game-object/utility/steering/S4.js';
+import G360 from '../game-object/utility/gimbal/G360.js';
 import G240 from '../game-object/utility/gimbal/G240.js';
 import G180 from '../game-object/utility/gimbal/G180.js';
 import G120 from '../game-object/utility/gimbal/G120.js';
@@ -40,6 +41,7 @@ export const gimbals = {
     'G120': G120,
     'G180': G180,
     'G240': G240,
+    'G360': G360,
 };
 
 export const scanners = {

@@ -26,8 +26,6 @@ export default class Drone extends Particle {
         this.thruster = new thrusterValues[drone.thruster]();
         this.steering = new steeringValues[drone.steering]();
         this.chassis = new chassisValues[drone.chassis]();
-        console.log(this.chassis)
-        console.log(this.chassis.health)
         this.health = new Health(this.chassis.health);
         this._damage = 0;
         this._kills = 0;
