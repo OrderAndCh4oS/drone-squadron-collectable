@@ -4,10 +4,14 @@ export default class DisplayData {
     constructor(x, y, colour, align = 'left', size = 16) {
         this.x = x;
         this.y = y;
-        this.colour = colour;
         this.align = align;
         this.size = size;
         this.lines = [];
+        this._colour = colour;
+    }
+
+    set colour(value) {
+        this._colour = value;
     }
 
     addLine(text) {
@@ -17,7 +21,7 @@ export default class DisplayData {
     textStyle() {
         context.textAlign = this.align;
         context.font = this.size + 'px Verdana';
-        context.fillStyle = colours[this.colour];
+        context.fillStyle = colours[this._colour];
     }
 
     draw() {

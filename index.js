@@ -3,11 +3,12 @@ import {
     background,
     canvas,
     colourHex,
-    colours, continueButton,
+    colours,
+    continueButton,
     debug,
     dm,
     game,
-    grid,
+    grid, highScoreEl,
     loading,
     playerOneScoreEl,
     playerTwoScoreEl,
@@ -25,7 +26,7 @@ import GameOver from './user-interface/display-game-over.js';
 import enemyQueue from './data/enemy-drones/enemy-queue.js';
 
 let fpsInterval, startTime, now, then, elapsed;
-
+let highScore = window.localStorage.getItem('drone-squadron-high-score') || 0;
 debug.initialiseListeners();
 
 startButton.onclick = async function() {
@@ -62,6 +63,7 @@ window.onresize = async() => {
 
 window.onload = async() => {
     loading.style.display = 'block';
+    highScoreEl.innerText = highScore;
     await audioManager.setAudioFile('explosion', 'assets/audio/sound/explosion_1.wav');
     await audioManager.setAudioFile('pulse-rifle', 'assets/audio/sound/pulse-rifle.wav');
     await audioManager.setAudioFile('arc-gun', 'assets/audio/sound/arc-gun.wav');
@@ -88,6 +90,8 @@ async function initialise() {
     scoresEl.style.display = 'flex';
     playerOneScoreEl.style.color = colours[squadrons[0].colour];
     playerTwoScoreEl.style.color = colours[squadrons[1].colour];
+    continueButton.style.color = colours[squadrons[0].colour];
+    continueButton.style.borderColor = colours[squadrons[0].colour];
     game.state = 'playing';
 }
 
@@ -100,7 +104,7 @@ async function fetchEnemySquadron(rank) {
 
 async function fetchPlayerSquadron() {
     const playerSquadronData = await fetch(
-        `./data/player-drones/3_oovWusjQiHBKkhxGs7UWN1Zn5W4NEe3aouSMTAWmrg2QAtE9BKA/squadron.json`);
+        `./data/player-drones/0_ooiv5T9KCamR6KTkRTcHQ2GspoML7w4D1XfWzbjNnd24cF6BWYB/squadron.json`);
     return await playerSquadronData.json();
 }
 
@@ -159,21 +163,17 @@ function animate() {
         }
         if(game.state === 'playing' && squadrons[0]?.health <= 0 && squadrons[1]?.health > 0) {
             game.rank = 0;
+            if(scoreManager.playerOneScore > highScore) {
+                highScore = scoreManager.playerOneScore;
+                window.localStorage.setItem('drone-squadron-high-score', highScore);
+                highScoreEl.innerText = highScore;
+            }
         }
         if(squadrons[0]?.health <= 0 || squadrons[1]?.health <= 0) game.state = 'game-over';
     }
     if(game.state === 'game-over') {
-        new GameOver().draw();
+        new GameOver().draw(game.rank);
     }
     requestAnimationFrame(animate);
     setFrameTimeData();
-    i++;
-    if(i % 200 === 0) {
-        console.log(squadrons[0].health);
-        console.log(game.state);
-    }
-    if(i % 200 === 0) {
-        console.log(squadrons[1].health);
-        console.log(game.state);
-    }
 }

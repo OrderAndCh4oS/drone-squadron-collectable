@@ -43,6 +43,7 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
+    padding: 0 20px;
 }
 
 .button {
@@ -68,6 +69,10 @@ body {
     background-color: #bfbfbf;
     color: #313840;
     border: #bfbfbf wave 1px;
+}
+
+.quit-button {
+    margin-left: auto;
 }
 
 .separator {
@@ -159,10 +164,17 @@ body {
     padding: 30px;
     display: none;
     justify-content: space-between;
+    align-items: flex-end;
     width: 100%;
 }
 
 .score {
     font-size: 20px;
-    color: #FF4100;
+    color: #bfbfbf;
+}
+
+.high-score {
+    color: #bfbfbf;
+    font-size: 11px;
+    margin-right: auto;
 }

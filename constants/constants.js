@@ -12,6 +12,7 @@ import ScoreManager from '../manager/score-manager.js';
 export const canvas = document.getElementById('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+export const highScoreEl = document.getElementById('high-score')
 export const scoresEl = document.getElementById('scores')
 export const playerOneScoreEl = document.getElementById('player-one-score')
 export const playerTwoScoreEl = document.getElementById('player-two-score')
