@@ -52,15 +52,20 @@
 <canvas id="canvas"></canvas>
 <span class="loading" id="loading">Loading...</span>
 <button id="start-button" class="start-button">Play</button>
+<button id="continue-button" class="continue-button">Continue</button>
+<div class="scores" id="scores">
+    <div class="score player-one-score" id="player-one-score">0</div>
+    <div class="score player-two-score" id="player-two-score">0</div>
+</div>
 <div id="debug-bar" class="debug-bar">
-    <button id="restart" class="button">Restart</button>
-    <button id="stop" class="button">Stop</button>
-    <span class="separator">|</span>
     <button id="game-grid-toggle" class="button">Grid</button>
-    <button id="scanner-radius-toggle" class="button">Scanner Radius</button>
-    <button id="scanner-path-toggle" class="button">Scanner Path</button>
-    <button id="name-toggle" class="button">Names</button>
+    <button id="scanner-radius-toggle" class="button">Scanners</button>
+    <button id="scanner-path-toggle" class="button">Target</button>
+<!--    <button id="name-toggle" class="button">Names</button>-->
     <button id="data-toggle" class="button">Data</button>
+    <span class="separator">|</span>
+    <button id="stop" class="button">Quit</button>
+
     <!--    <button id="game-grid-log" class="button">Log Grid</button>-->
 </div>
 <script type="module" src="index.js"></script>

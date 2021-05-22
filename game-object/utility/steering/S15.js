@@ -2,6 +2,6 @@ import Steering from '../steering.js';
 
 export default class S15 extends Steering {
     constructor() {
-        super(1.2);
+        super(1.35);
     }
 }

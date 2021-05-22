@@ -111,8 +111,8 @@ export default class Scanner {
         context.lineTo(5, 5);
         context.moveTo(5, -5);
         context.lineTo(-5, 5);
-        context.strokeStyle = drone.colour;
-        context.strokeWidth = 5;
+        context.strokeStyle = colours.red;
+        context.strokeWidth = 6;
         context.stroke();
         context.resetTransform();
     }
@@ -125,9 +125,11 @@ export default class Scanner {
             context.moveTo(drone.position.x, drone.position.y);
             context.lineTo(this.target.position.x,
                 this.target.position.y);
-            context.strokeStyle = colours.white;
+            context.strokeStyle = drone.colour;
+            context.lineWidth = 2;
             context.stroke();
             context.setLineDash([0]);
+            context.lineWidth = 1;
         }
     }
 

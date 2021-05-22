@@ -1,11 +1,11 @@
 import Weapon from '../abstract/weapon.js';
-import NineMM from '../ammo/nine-mm.js';
-import { audioHandler, context } from '../../constants/constants.js';
+import PulseShot from '../ammo/pulse-shot.js';
+import { audioManager, context } from '../../constants/constants.js';
 
 export default class PulseRifle extends Weapon {
     constructor(drone, x, y, angle, gimbal) {
         const fireRate = 2.3;
-        const round = NineMM;
+        const round = PulseShot;
         super(drone, 'Pulse Rifle', '#8aa', x, y, angle, gimbal, round, fireRate);
     }
 
@@ -24,6 +24,6 @@ export default class PulseRifle extends Weapon {
 
     fire() {
         super.fire();
-        audioHandler.play('uzi', 0.3);
+        audioManager.play('pulse-rifle', 0.3);
     }
 }

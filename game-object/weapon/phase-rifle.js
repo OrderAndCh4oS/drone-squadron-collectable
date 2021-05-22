@@ -1,11 +1,11 @@
 import Weapon from '../abstract/weapon.js';
-import { audioHandler, context } from '../../constants/constants.js';
-import SevenSixTwoMM from '../ammo/seven-six-two-mm.js';
+import { audioManager, context } from '../../constants/constants.js';
+import PhaseShot from '../ammo/phase-shot.js';
 
 export default class PhaseRifle extends Weapon {
     constructor(drone, x, y, angle, gimbal) {
         const fireRate = 8;
-        const round = SevenSixTwoMM;
+        const round = PhaseShot;
         super(drone, 'Phase Rifle', '#577', x, y, angle, gimbal, round, fireRate);
     }
 
@@ -24,6 +24,6 @@ export default class PhaseRifle extends Weapon {
 
     fire() {
         super.fire();
-        audioHandler.play('rifle', 0.7);
+        audioManager.play('phase-rifle', 0.7);
     }
 }

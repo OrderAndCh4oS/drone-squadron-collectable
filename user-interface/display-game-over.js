@@ -10,7 +10,6 @@ export default class GameOver extends DisplayData {
         if(squadrons.length !== 2) return;
         if(squadrons[0].health > squadrons[1].health) {
             this.addLine(squadrons[0].name + ' Wins');
-            this.addLine('Continue');
             this.colour = squadrons[0].colour
         } else if(squadrons[1].health > squadrons[0].health) {
             this.addLine(squadrons[1].name + ' Wins');

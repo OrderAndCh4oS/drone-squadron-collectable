@@ -1,11 +1,11 @@
 import Weapon from '../abstract/weapon.js';
-import { audioHandler, context, pm } from '../../constants/constants.js';
-import Shot from '../ammo/shot.js';
+import { audioManager, context, pm } from '../../constants/constants.js';
+import ArcShot from '../ammo/arc-shot.js';
 
 export default class ArcGun extends Weapon {
     constructor(drone, x, y, angle, gimbal) {
-        const fireRate = 6.5;
-        const round = Shot;
+        const fireRate = 6;
+        const round = ArcShot;
         super(drone, 'Arc Gun', '#664', x, y, angle, gimbal, round, fireRate);
     }
 
@@ -35,6 +35,6 @@ export default class ArcGun extends Weapon {
                 ),
             );
         }
-        audioHandler.play('shotgun', 0.8);
+        audioManager.play('arc-gun', 0.8);
     }
 }

@@ -1,17 +1,14 @@
-import { colours, context, debug } from '../constants/constants.js';
-import Vector from '../service/vector.js';
+import {
+    chassisValues,
+    colours,
+    context,
+    debug, gimbalValues, scannerValues,
+    steeringValues,
+    thrusterValues, weaponValues,
+} from '../constants/constants.js';
 import Particle from './abstract/particle.js';
 import Health from '../service/health.js';
-import { chassis, gimbals, scanners, steering, thrusters } from '../constants/utilities.js';
-import { weapons } from '../constants/weapons.js';
 import DisplayData from '../user-interface/display-particle-data.js';
-
-const chassisValues = Object.values(chassis);
-const weaponValues = Object.values(weapons);
-const scannerValues = Object.values(scanners);
-const thrusterValues = Object.values(thrusters);
-const steeringValues = Object.values(steering);
-const gimbalValues = Object.values(gimbals);
 
 export default class Drone extends Particle {
     constructor(drone, squad, x, y, angle) {
@@ -19,8 +16,7 @@ export default class Drone extends Particle {
         this._squadId = squad.id;
         this._colour = squad.colour;
         this.name = drone.name;
-        this.vector = new Vector(0, 1);
-        this.vector.setAngle(angle);
+        this.value = drone.value;
         this.weapon = new weaponValues[drone.weapon](this, x, y, angle, gimbalValues[drone.gimbal]);
         this.scanner = new scannerValues[drone.scanner]();
         this.thruster = new thrusterValues[drone.thruster]();
@@ -30,10 +26,10 @@ export default class Drone extends Particle {
         this._damage = 0;
         this._kills = 0;
         this._killed = [];
-        this._sprite = new Image();
         const thrusterNo = drone.thruster + 1;
         const steeringNo = drone.steering + 1;
         const chassisNo = ~~(Math.random() * 5) + 1;
+        this._sprite = new Image();
         this._sprite.src = `assets/drones/${this._colour}/c${chassisNo}_w${steeringNo}_e${thrusterNo}_v1.png`;
     }
 
@@ -97,18 +93,6 @@ export default class Drone extends Particle {
         context.rotate(this.vector.getAngle() + (Math.PI / 180) * 90);
         context.translate(-24, -24);
         context.drawImage(this._sprite, 0, 0, 48, 48);
-    }
-
-    drawDrone() {
-        context.beginPath();
-        context.moveTo(10, 0);
-        context.lineTo(-10, -7);
-        context.lineTo(-10, 7);
-        context.lineTo(10, 0);
-        context.strokeStyle = this._colour;
-        context.stroke();
-        context.fillStyle = this._colour;
-        context.fill();
     }
 
     drawName() {

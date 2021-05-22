@@ -3,7 +3,7 @@ export default class Debug {
         this._gameGridToggle = false;
         this._scannerRadiusToggle = false;
         this._scannerPathToggle = false;
-        this._droneNameToggle = false;
+        // this._droneNameToggle = true;
         this._droneDataToggle = false;
         this._gameGridLog = false;
     }
@@ -24,9 +24,9 @@ export default class Debug {
         return this._gameGridToggle;
     }
 
-    get droneNameToggle() {
-        return this._droneNameToggle;
-    }
+    // get droneNameToggle() {
+    //     return this._droneNameToggle;
+    // }
 
     get scannerPathToggle() {
         return this._scannerPathToggle;
@@ -40,17 +40,17 @@ export default class Debug {
         this.addGameGridToggleListener();
         this.addScannerRadiusToggleListener();
         this.addScannerPathToggleListener();
-        this.addNameToggleListener();
+        // this.addNameToggleListener();
         this.addDataToggleListener();
         // this.addGameGridLogListener();
     }
 
-    addGameGridLogListener() {
-        document.getElementById('game-grid-log')
-            .addEventListener('click', (e) => {
-                this._gameGridLog = !this._gameGridLog;
-            });
-    }
+    // addGameGridLogListener() {
+    //     document.getElementById('game-grid-log')
+    //         .addEventListener('click', (e) => {
+    //             this._gameGridLog = !this._gameGridLog;
+    //         });
+    // }
 
     addGameGridToggleListener() {
         document.getElementById('game-grid-toggle')
@@ -76,13 +76,13 @@ export default class Debug {
             });
     }
 
-    addNameToggleListener() {
-        document.getElementById('name-toggle')
-            .addEventListener('click', (e) => {
-                e.target.classList.toggle('toggled');
-                this._droneNameToggle = !this._droneNameToggle;
-            });
-    }
+    // addNameToggleListener() {
+    //     document.getElementById('name-toggle')
+    //         .addEventListener('click', (e) => {
+    //             e.target.classList.toggle('toggled');
+    //             this._droneNameToggle = !this._droneNameToggle;
+    //         });
+    // }
 
     addDataToggleListener() {
         document.getElementById('data-toggle')

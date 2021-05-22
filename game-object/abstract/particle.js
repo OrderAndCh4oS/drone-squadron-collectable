@@ -11,6 +11,8 @@ export default class Particle {
         this.velocity = new Vector(0, 0);
         this.velocity.setLength(speed);
         this.velocity.setAngle(angle);
+        this.vector = new Vector(0, 1);
+        this.vector.setAngle(angle);
         this._remove = false;
         this._colour = colours.white;
         this._gridX = Math.floor(this.position.x / grid.gridBlockSize);

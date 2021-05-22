@@ -1,5 +1,5 @@
 import { didCollide, isOffCanvas } from '../functions.js';
-import { dm } from '../constants/constants.js';
+import { dm, scoreManager } from '../constants/constants.js';
 
 export default class ParticleManager {
     particles = [];
@@ -34,6 +34,7 @@ export default class ParticleManager {
                 if(p.id !== -1) {
                     if(initialHealth > 0 && d.health.currentHealth <= 0) {
                         p.tallyKill(d);
+                        scoreManager.tallyKill(p, d);
                     }
                     p.tallyDamage(p.damage);
                     p.removeParticle();
